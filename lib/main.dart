@@ -27,23 +27,25 @@ class _MyAppState extends State<MyApp> {
             ),
             centerTitle: true,
           ),
-        body: Container(
-          width: MediaQuery.of(context).size.width,
-          child: Column(
-            crossAxisAlignment:CrossAxisAlignment.center ,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              //making the payment
-              RaisedButton(onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (ctx)=>Home(onFinish: (number)async{
-                  print('order id: '+number );
-                },)));
-              },child: Text('pay with Paypal'),
+          body: Container(
+//          width: MediaQuery.of(context).size.width,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                //making the payment
+                RaisedButton(onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>Home(onFinish: (number)async{
+                    print('order id: '+number );
+                  },))
 
-              )
-            ],
+                  );
+                }, child: Text('pay with Paypal'),
+
+                )
+              ],
+            ),
           ),
-        ),
         ));
   }
 }
