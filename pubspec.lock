@@ -43,6 +43,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.14.13"
+  convert:
+    dependency: transitive
+    description:
+      name: convert
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.1"
+  crypto:
+    dependency: transitive
+    description:
+      name: crypto
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.5"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -68,12 +82,19 @@ packages:
     source: sdk
     version: "0.0.0"
   http:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: http
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.12.2"
+  http_auth:
+    dependency: "direct main"
+    description:
+      name: http_auth
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.0"
   http_parser:
     dependency: transitive
     description:
@@ -102,13 +123,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.7.0"
-  paypal:
-    dependency: "direct main"
-    description:
-      name: paypal
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.4"
   pedantic:
     dependency: transitive
     description:
