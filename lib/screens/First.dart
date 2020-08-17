@@ -12,38 +12,62 @@ class _FirstState extends State<First> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       key: _scaffoldKey,
-      appBar: AppBar(
-        title: Text(
-          'Paypal Demo',
-          style: TextStyle(color: Colors.white),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(45.0),
+        child: new AppBar(
+          backgroundColor: Colors.white,
+          title: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Paypal Payment Example',
+                style: TextStyle(
+                    fontSize: 16.0,
+                    color: Colors.red[900],
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Open Sans'),
+              ),
+            ],
+          ),
         ),
-        centerTitle: true,
       ),
-      body: Container(
-//          width: MediaQuery.of(context).size.width,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            //making the payment
-            RaisedButton(
-              onPressed: (){
+      body:Container(
+          width: MediaQuery.of(context).size.width,
+          child: Container(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                RaisedButton(
+                  onPressed: (){
 
-                // make PayPal payment
-                Navigator.push(context, MaterialPageRoute(builder: (ctx)=>Home(onFinish: (number)async{
-                  print("payment ID: "+number.toString());
-                },)));
+                    // make PayPal payment
+
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => PaypalPayment(
+                          onFinish: (number) async {
+
+                            // payment done
+                            print('order id: '+number);
+
+                          },
+                        ),
+                      ),
+                    );
 
 
-              },
+                  },
+                  child: Text('Pay with Paypal', textAlign: TextAlign.center,),
+                ),
 
-              child: Text('pay with Paypal'),
-
-            )
-          ],
-        ),
+              ],
+            ),
+          )
       ),
     );
+
   }
 }
