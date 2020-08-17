@@ -82,9 +82,9 @@ class PaypalPaymentState extends State<PaypalPayment> {
 
 
     // checkout invoice details
-    String totalAmount = '200';
-    String subTotalAmount = '200';
-    String shippingCost = '50';
+    String totalAmount = '1.99';
+    String subTotalAmount = '1.99';
+    String shippingCost = '0';
     int shippingDiscountCost = 0;
     String userFirstName = 'Gulshan';
     String userLastName = 'Yadav';
